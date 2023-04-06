@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super timer</title>
+</head>
+<body>
+    <center>
+        <h1>Super timer app</h1>
+        <h2 id="show">numbers will display here</h2>
+        <table>
+            <th>
+                <h3>Input seconds</h3>
+
+            </th>
+            <td>
+                <input type="integer" id="cntLenf">
+                <input type="button" onclick="countdown()" value="count down now">
+            </td>
+        </table>
+
+    </center>
+    <script>
+        function countdown() {
+        let v,b, cntLenf;
+v = 1;
+cntLenf = document.getElementById('cntLenf').value;
+var id4timer = setInterval(count, 1000);
+
+function count() {
+v++;
+document.getElementById('show').innerHTML = ('the timer now is '+(cntLenf - v + 2)+' and the var v is '+ v); //you hv to +2 here to make it be accurate
+if ((cntLenf - v - 1) < 0) {
+window.clearInterval(id4timer);
+document.getElementById('show').innerHTML = ('success, timer has been ended');
+}
+}
+        }
+    </script>
+</body>
+</html>

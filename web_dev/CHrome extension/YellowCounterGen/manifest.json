@@ -1,0 +1,12 @@
+{
+    "name": "YellowCounterGen",
+    "version": "1.0.1",
+    "description": "count the length of a string, and generate a series of seperator for it",
+    "manifest_version": 3,
+    
+    "author": "yscysc",
+    "action":{
+        "default_popup": "P2index.html",
+        "default_title": "YellowCounterGen"
+    }
+}

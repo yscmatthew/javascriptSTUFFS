@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <script src="mainfun.js"></script>
+    <title>To Do Checker app</title>
+</head>
+<body>
+    <center>
+        <h1>
+            To-Do list with a timer
+        </h1>
+        <hr>
+        <!-- Check boxes here, should be able to change with js-->
+        
+        <br>
+        <hr>
+        <h3>Add more items / to-do here</h2>
+        <a class="pure-button" style="color:rgb(32, 136, 105);" id="submit_butt">Submit</a>
+
+        <input id="add_todo" required maxlength="30" col="10" row="8" type="text" value="enter here">
+        <br>
+        <h3>Delete items here</h3>
+        <input id="del_todo" required maxlength="2" type="integer">
+        <a class="pure-button" style="color:blue;" id="del_butt" onclick="del()">Delete</a>
+        <div>
+            <p id="memoLines"></p>
+
+        </div>
+    </center>
+    <div>
+        <h6 id="variable batch"></h6>
+    </div>
+<script>
+    
+</script>
+
+
+</body>
+</html>

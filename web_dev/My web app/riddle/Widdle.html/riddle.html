@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vocabs guessing game</title>
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+    <link href="wonderfulwrap.css" rel="stylesheet">
+    <style>
+        body {
+        background-color: lightgray;
+        cursor: auto;
+    }
+       .centertext1 {
+        color:brown;
+        cursor:auto;
+        font-family:comic-sans;
+       }
+       .button1 {
+        background-color:lightcyan;
+        border: none;
+        padding: 10px 25px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        font-size: 14px;
+       }
+       .darkgreentext {
+        color:darkgreen;
+        size:15px;
+        cursor:wait;
+
+       }
+       .violetjsswords {
+        color:rgb(77, 8, 90);
+       }
+       hr {
+        size: 4px;
+        border-color:black;
+       }
+       body {
+        text-decoration: solid;
+       }
+       label {
+        text-decoration: darkred;
+
+       }
+    </style>
+    </head>
+    
+    <body>
+       
+        <center>
+            <h2>the word guessing riddle game</h2>
+            <hr>
+            <h3 id="lowd"></h3>
+            <label for="usrinp">guess a word here</label>
+                <input id="usrinp" type="text">
+                <button id="subnok" onclick="subges()">submit guess</button>
+                <p id="tips">
+                hello world
+                </p>
+                <p id="real_tips"></p>
+                <textarea type="text" rows="3" cols="20"></textarea>
+
+        </center>
+        <script>
+        console.log('hello world');
+        const wocads = ["apple", "orange", "happy", "coffee", "iPhone", "actually", "pointer", "IBM7094", "monosaccharide", "JavaScript"];
+            const def1 = ["a food keeps doctor away", "people always compare it to apple", "teens feel every second",
+        "a drink that keeps you in mind", "a smaller size of a iPad", "a conjunction, tells you the fact", 
+        ]           
+            var RNRP = Math.floor(Math.random() * 7); //generate 0 to 8
+            //pickup
+            var ranWordPickup = wocads[RNRP];
+
+            console.log(ranWordPickup);
+            console.log(RNRP);
+           
+            //generate the word and the line
+            
+            
+            
+            
+
+
+
+
+
+
+            var sulin = "?";
+            let i, pler;
+            for (i = 1; i < wocads[RNRP].length;) {
+            sulin = sulin + " ?";
+            i++;
+            }
+            document.getElementById("lowd").innerHTML = (sulin);
+            console.log(wocads[RNRP].length);
+            
+            function subges() {
+            console.log('function subges ok');
+            let compar, i, micofe;
+            compar =  document.getElementById("usrinp").value;
+            micofe = "";
+            
+            for (i = 0; i < wocads[RNRP].length;) {
+            //step 1
+            console.log("for is ok");
+            if (compar[i] == wocads[RNRP[i]]) {
+           //step2
+            console.log('if is ok');
+            micofe = micofe + string.charAt(i) + " ";
+            i++ ;
+           
+            } else {
+            micofe = micofe + "? ";
+            console.log('else is ok');
+            }
+            
+            }
+            
+            
+     document.getElementById("lowd").innerHTML = (micofe);
+            }
+            // hello
+            let ARTG;
+            function subges() {
+
+            document.getElementById('tips').innerHTML = (' ');
+            ARTG = ''; //ARTG means <<<<"add result to game">>>>>
+            //don't redeclare i
+            var usrinp_comparer = document.getElementById('usrinp').value;
+            if (usrinp_comparer != '') { //to ensure that user has inputted a value
+            console.log(wocads[RNRP].length); //hv to print out this in order to get next line (wocads[RNRP].length) to be recognized 
+            var rept_lengf_4_chkans = wocads[RNRP].length;
+            console.log(rept_lengf_4_chkans + 'value on l109');
+            
+            var txtbox_empty = false;
+
+
+            for (var i = 0; i < rept_lengf_4_chkans; i++) {
+            if (usrinp_comparer.charAt(i) == ranWordPickup.charAt(i)) {
+            ARTG = ARTG + usrinp_comparer.charAt(i) + " ";
+            
+            
+            } else if (usrinp_comparer.charAt(i) != ranWordPickup.charAt(i)) {
+            ARTG = ARTG + ("? ");
+            
+            
+            } else {
+            var txtbox_empty = true;
+            
+            
+            }
+            console.log(' ');
+            }
+            document.getElementById('lowd').innerHTML = ARTG;
+            
+            txtbox_empty = false;
+        } else {
+            document.getElementById('tips').innerHTML = "you havn't typed in anything!";
+        }
+            }
+        
+            
+           
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,12 @@
+{
+    "name": "888Random number guessing game",
+    "version": "1.2.1",
+    "description": "my first js game",
+    "manifest_version": 3,
+    
+    "author": "yscysc",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "game"
+    }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Guessing Game</title>
+    <style>
+        h5 {
+            color:blueviolet;
+        }
+        body {
+            background-color: rgb(54, 157, 197);
+        }
+        p {
+            color:#0a5841;
+        }body {
+  background-color: lightblue;
+}
+h2 {
+    color:rgb(37, 84, 16);
+
+}
+i {
+    color:hotpink;
+}
+
+
+    </style>
+</head>
+<body>
+    <center>
+        <h2 id="curtime">hello world</h2>
+        <label id="a">Enter a number here</label>
+        <input id="usrinput" type="integer" >
+        <input type="submit" id="usrGuess" onclick="checkans()">
+        <br>
+       <p id="tips"></p> 
+        <p id="chance"></p>
+        <hr style="height:10px;">
+        <p id="answer">enter a number now, range in 1-100!</p>
+
+    </center>
+<script>
+    //useless time report that finally works, Remember that js is CASE SENSITIVE!!!
+    const time = new Date().getHours(); //Date() not date()
+
+    if (time < 5) {
+        document.getElementById("curtime").innerHTML = "Have a fantastic midnight! d>_<b    ";
+
+    } else if (time < 12) {
+        document.getElementById("curtime").innerHTML = "Good morming! UwO";
+    } else if (time < 18) {
+        document.getElementById('curtime').innerHTML = "Good afternoon UwU";
+    } else {
+        document.getElementById('curtime').innerHTML = "Good Evening! OwO";
+    }
+    //
+    var ranNum = getRndInteger(0,100);
+
+    //document.getElementById("answer").innerHTML = (ranNum);
+    function getRndInteger(min,max) {
+            return Math.floor(Math.random() * (max - min + 1)) +min;
+        }
+    let countdummyvar2 = 5;
+    var dummyvar1 = 7;//I've put some dummy vars here so that the spcounter can be globally declared.
+    var spcounter = 7;
+
+    function checkans() {
+        console.log(spcounter);
+        var UIC = document.getElementById("usrinput");
+        var c1 = "You have ";
+        var c2 = " chances left.";
+        
+
+        console.log(UIC.value); //add a .value tag to capture what's inside the textbox instead of code
+        console.log(c1 + spcounter + c2);
+         //main
+         if (spcounter > 0)
+         {
+         if (UIC.value > ranNum) {
+            spcounter = spcounter - 1;
+            document.getElementById("tips").innerHTML = ("The number " + UIC.value + " is too large.");
+            document.getElementById("chance").innerHTML = (c1 + spcounter + c2);
+            
+
+         } else if (UIC.value < ranNum) {
+            spcounter = spcounter - 1;
+            document.getElementById("tips").innerHTML = ("The number " + UIC.value + " is too small.");
+            document.getElementById("chance").innerHTML = (c1 + spcounter + c2);
+
+
+
+         } else if (UIC.value == ans) {
+            document.getElementById("tips").innerHTML = ("Congratulations! The number " + UIC.value + " is correct!")
+         }
+    } else {
+        document.getElementById("chance").innerHTML = ("Sorry, you lose as all of your chances are used. The correct number is " + ans + " .");
+
+        document.getElementById("tips").innerHTML = (ans);
+
+    }
+}
+    
+//errors:
+//1. all are local vars, need public vars
+</script>    
+</body>
+
+</html>

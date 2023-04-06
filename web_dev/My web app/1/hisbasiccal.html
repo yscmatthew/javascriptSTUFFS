@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        h5 {
+            color:blueviolet;
+        }
+        body {
+            background-color: rgb(54, 157, 197);
+        }
+        p {
+            color:#0a5841;
+        }body {
+  background-color: lightblue;
+}
+h2 {
+    color:rgb(37, 84, 16);
+
+}
+i {
+    color:hotpink;
+}
+
+
+    </style>
+
+
+<body>
+    <h1>My Basic Calculator</h1>
+
+<p>input 1: <input id="input1" size="5"/></p><br>
+
+<p>input 2: <input id="input2" size="5"/></p><br>
+
+<button class="sign" id="add">+</button>
+
+<p>Answer:<input id="output1" size="5"/></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    var do_calcul = function() {
+    var num1 = String(document.getElementById("input1").value);
+    var num2 = String(document.getElementById("input2").value);
+    var result;
+
+    if (this.id == "add") {
+        result = num1 + num2;
+    } 
+    document.getElementById("output1").value = result;
+};
+
+
+
+var signs_buttons = document.getElementsByClassName("sign");
+for(var i=0;i<signs_buttons.length;i++){
+    signs_buttons[i].addEventListener('click', do_calcul, false);
+}
+</script>
+</body>

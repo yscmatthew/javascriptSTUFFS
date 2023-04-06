@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="styleshhet" href="test1.css">
+    <title>binary search</title>
+</head>
+<body>
+    <label for="lo_range">Lowest range</label>
+    <input type="integer" id="lo_range" value=10>
+    <label for="hi_range">higest range</label>
+    <input id="hi_range" type="integer" value=20>
+    <br>
+    <label for="loops">Looping quantities</label>
+    <input id="loops" type="integer" value=10>
+    <button id="submit_changes" onclick="party(lo = document.getElementById('lo_range').value, hi = document.getElementById('hi_range').value, loopt = document.getElementById('loops').value)">Submit & run</button>
+    <table>
+        <th>
+            <h6 id="show1">hello world</h6>
+        </th>
+        <th>
+            <h6 id="show2">super idol</h6>
+        </th>
+    </table>
+    <script>
+        
+
+        function party(lo,hi,loopt) { //loopt means te quantity of complete process has to be done, //How many lines / 2 be printed
+            parseInt(lo,hi,loopt);
+            var hiD = parseInt(hi);
+            var loD = parseInt(lo);
+            var looptD = parseInt(loopt);
+            
+
+            var rannum = Math.floor(Math.random() * (hiD - loD + 1)) + loD;
+            console.log("The rannum var is " + rannum);
+
+            var gprinter = "Suceess <br>";
+            for (var i = 0; i < loopt; i++)
+            {
+
+                while (guessNum != rannum) {
+                    guessNum = parseInt(guessNum);
+                    guessNum = Math.round((hiD - loD) / 2) + lo;
+
+                    if (rannum == guessNum) {
+                        gprinter += 'Bingo! The number is ' + guessNum + ' . I have used ' + i + 'times to find it!. ' + '<br>';
+                        whetherSolved = true;
+                        
+
+                        break;
+
+                    } else if (guessNum < rannum) { //as it's smaller, pick the lower guess
+                        loD = guessNum + 1;
+
+                     
+
+                    } else if (guessNum > rannum) {
+                        hiD = guessNum - 1;
+                    } 
+
+                }
+
+                console.log("survived in round" + i);
+                //document.getElementById("show1").innerHTML = (gprinter);
+           
+         
+            }
+            document.getElementById("show1").innerHTML = (gprinter);
+            function show12() {
+                
+                const m1d = ['show1', 'show2'];
+                return m1d[Math.floor(Math.random() * 2)];
+            }
+        }
+
+        
+
+    </script>
+</body>
+</html>
